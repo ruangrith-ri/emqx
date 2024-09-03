@@ -62,7 +62,7 @@ jobs:
           - 23.2
 
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: source
         path: .
@@ -137,7 +137,7 @@ jobs:
           - profile: emqx-edge
     runs-on: ${{ matrix.macos }}
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: source
         path: .
@@ -254,7 +254,7 @@ jobs:
       with:
         image: tonistiigi/binfmt:latest
         platforms: all
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: source
         path: .
@@ -339,7 +339,7 @@ jobs:
           - 24.1.5-3 # update to latest
 
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: source
         path: .
@@ -428,7 +428,7 @@ jobs:
         echo 'version<<EOF' >> $GITHUB_ENV
         echo ${{ github.ref }} | sed -r  "s ^refs/heads/|^refs/tags/(.*) \1 g" >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: ${{ matrix.profile }}-${{ matrix.otp }}
         path: ./_packages/${{ matrix.profile }}
